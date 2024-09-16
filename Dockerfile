@@ -2,7 +2,7 @@
 FROM node:18 AS build
 
 # Step 2: Set the working directory in the container
-WORKDIR /app
+WORKDIR /stuchbery_finn_site
 
 # Step 3: Copy package.json and package-lock.json into the container
 COPY package*.json ./
@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Step 8: Copy the build files from the previous stage to Nginx’s html directory
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /stuchbery_finn_site/build /usr/share/nginx/html
 
 # Step 9: Expose port 80 to access the app
 EXPOSE 80
