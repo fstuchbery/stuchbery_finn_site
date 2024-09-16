@@ -20,4 +20,5 @@ Follow these steps in the Dockerfile and here to get the web application running
 
    ```bash
    docker build -t stuchbery_finn_site .
+   docker run -d -p 7775:80 stuchbery_finn_site
    
